@@ -3,8 +3,7 @@ for (t in 1:5){
   n <- 100
   y <- sample(1:5, n, replace = T)
   y <- tabulate(y)
-  barplot(y)
-  
+
   col.seq <- seq(0.2,1,1/length(unique(y)))
   col.seq <- col.seq[match(y, sort(y))]
   
