@@ -1,2 +1,2 @@
 # Blog
-codes for my blog
+codes and plots for my blog
