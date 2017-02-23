@@ -1,0 +1,62 @@
+
+digraph relatioships{
+
+ graph [rankdir = LR, overlap=true, fontsize = 10, fontname="Batang"]
+ 
+ ## nodes for distributions of two types:
+ ## continuous and discrete
+ 
+ node [style = filled,
+       color = white,
+       fontname="Lucida Calligraphy Italic"]
+ 
+ ## continuous, simulated directly from uniform 
+ node [shape = egg,
+       #color = grey,
+       penwidth = 2,
+       fillcolor = darkseagreen1,
+       fontcolor = darkslategray,
+       alpha = 0.1,
+       fontname="Lucida Calligraphy Italic"]
+ Unif; Exponential; Logistic; Cauchy; Pareto; TrNorm;
+ 
+ ## continuous, derivatives of other continuous
+ node [shape = egg,
+       #color = grey,
+       penwidth = 2,
+       fillcolor = goldenrod1,
+       fontcolor = goldenrod4,
+       alpha = 0.1,
+       fontname="Lucida Calligraphy Italic"]
+ ChiSq; Gamma; Beta; Student; 
+ 
+ ## dicrete
+ node [shape = box,
+       fixedsize = false,
+       width = 0.9,
+       penwidth = 2]
+ Binomial; Bernoulli; Poisson; 
+ 
+ ## edges
+ #edge [arrowhead = diamond]
+ edge [color = grey, fontname="Lucida Calligraphy Italic"]
+ Unif->Logistic         [label = '2', color='darkslategray', fontcolor='darkslategray']
+ Unif->Cauchy        [label = '3', color='darkslategray', fontcolor='darkslategray']
+ Unif->Exponential           [label = '1', color='darkslategray', fontcolor='darkslategray']
+ Unif->Pareto        [label = '4',  color='darkslategray', fontcolor='darkslategray']
+ Unif->TrNorm        [label = '8',  color='darkslategray', fontcolor='darkslategray', style=dotted] 
+ Unif->Binomial      [label = '9',  color='goldenrod4', fontcolor='goldenrod4', style=dotted] 
+ Unif->Bernoulli     [label = '10',  color='goldenrod4', fontcolor='goldenrod4', style=dotted]
+ Unif->Poisson       [label = '11',  color='goldenrod4', fontcolor='goldenrod4', style=dotted]
+
+
+ Exponential->ChiSq          [label = '5',  color='goldenrod4', fontcolor='goldenrod4', style=dotted]
+ Exponential->Gamma          [label = '6',  color='goldenrod4', fontcolor='goldenrod4', style=dotted ]
+ Exponential->Beta           [label = '7',  color='goldenrod4', fontcolor='goldenrod4', style=dotted]
+ Bernoulli->Binomial [label = '12',  color='goldenrod4', fontcolor='goldenrod4', style=dotted]
+ Exponential->Poisson [label = '12',  color='goldenrod4', fontcolor='goldenrod4', style=dotted]
+ Cauchy->Student      [label = '14', color='goldenrod4', fontcolor='goldenrod4', style=dotted]
+ 
+ #graph [nodesep = 0.1]
+ 
+}
